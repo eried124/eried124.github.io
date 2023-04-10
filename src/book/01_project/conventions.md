@@ -83,9 +83,9 @@ Naming components:
 - <span class="naming" style="color: #92b2ca;">OptionalNumber</span> Optional variation number for an asset variant, starting at `01`
     - Can be used in addition to the variant string if there's multiple versions of an asset variant
     - If it's a single digit number, it should be zero padded to two characters e.g. `01`, `09`, `15`
-- <span class="naming" style="color: #6fb2ba;">[OptionalDimensions]</span> Optional wall or floor size/dimensions in centimeters
+- <span class="naming" style="color: #6fb2ba;">OptionalDimensions</span> Optional wall or floor size/dimensions in centimeters
     - Formatted as `WIDTHxHEIGHT`. e.g. `200x200`, `400x200`
-- <span class="naming" style="color: #c0a7c7;">[TextureTypeSuffix]</span> Identifier for the texture type
+- <span class="naming" style="color: #c0a7c7;">TextureTypeSuffix</span> Identifier for the texture type
     - Refer to the table below for texture map types and their suffixes
 
 ### Asset Types
@@ -156,4 +156,18 @@ M_RockSurface           (general purpose material)
 PP_BloomFilter          (post-processing material)
 BP_PlayerController     (blueprint)
 PS_DenseSmoke           (particle system)
+```
+
+## Unreal Map Structure
+
+```
+Debug               (debugging utilities)
+Player              (player start position, player controller)
+World               (global world settings and volumes)
+<MapSection>        (a section of the environment, e.g. basement)
+  Structures        (basic structures: wall, floors, pillars, etc.)
+  Props             (placeable props: furniture, foliage, etc.)
+  Lights            (lightsources)
+  Particles         (particle systems)
+  Collisions        (structure collision volumes)
 ```

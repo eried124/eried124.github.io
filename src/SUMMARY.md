@@ -4,6 +4,7 @@
 
 - [Naming conventions](book/01_project/conventions.md)
 - [Folder structure](book/01_project/folders.md)
+- [Version control](book/01_project/version_control.md)
 - [Links](book/01_project/links.md)
 - [Final build](book/01_project/final_build.md)
 <!-- - [Scale and measurements](book/01_project/units.md) -->

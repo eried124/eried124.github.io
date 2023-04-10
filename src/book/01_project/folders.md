@@ -1,6 +1,6 @@
 # Folder structure
 
-The project contains two top level folders. 
+The `TNM061Project` project folder contains two top level folders. 
 
 - The `ContentSource` folder for the source asset files (source/project files from Maya/Blender and any asset project files)
 - The `UnrealProject` folder for the exported assets and Unreal Engine project files.

@@ -1,9 +1,12 @@
 # Texturing
 
+- As per Epic's recommendations, use .png, .tga, tif or .psd; **Do not save uncompressed images as .jpg**
 - Textures must have pixel dimensions that are powers of 2. 
     - A texture may be non-square/rectangles, but the width and height still have to be powers of 2
 - Textures dimensions should be as small as possible and their dimensions should not exceed `8129x8292` pixels.
 - As a rule of thumb, if you double the dimensions of a texture, it's file-size increases ~4x (exact size depends on image format, compression, etc)
+- For the sake of simplicity we will avoid using channel packed textures since it is more error prone and also harder to author using conventional tools
+- In the case where an alpha mask/channel is needed, it's fine to include it in the color map instead of authoring a dedicated alpha texture
 
 Valid texture sizes:
 
