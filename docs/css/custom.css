@@ -275,3 +275,17 @@ hr {
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-family: var(--mono-font) !important;
 }
+
+
+#deadline-bg {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin: 0em 0em;
+    padding: 0.5em 1em;
+    color: rgb(255, 156, 238, 0.75);
+    background-color: rgb(255, 156, 238, 0.08);
+    border: 2px dashed rgb(255, 156, 238, 0.15);
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+}

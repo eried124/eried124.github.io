@@ -6,6 +6,4 @@
 
 ## Asset Inventory
 
-## Trello Board
-
 ## Timeline

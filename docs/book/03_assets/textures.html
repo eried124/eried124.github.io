@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Textures - TND061</title>
+        <title>Textures - TND061 - Unreal Project</title>
 
 
         <!-- Custom HTML head -->
@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded "><a href="../../book/01_project/version_control.html">Version control</a></li><li class="chapter-item expanded "><a href="../../book/01_project/links.html">Links</a></li><li class="chapter-item expanded "><a href="../../book/01_project/final_build.html">Final build</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html" class="active">Textures</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/export.html">Exporting from Maya/Blender</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/import.html">Importing in Unreal Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Working in Unreal</li><li class="chapter-item expanded "><a href="../../book/04_unreal/blockout.html">Blocking out environments</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Engine Configuration</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Asset Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html" class="active">Textures</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Editor</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Engine Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +109,7 @@
                         </ul>
                     </div>
 
-                    <h1 class="menu-title">TND061</h1>
+                    <h1 class="menu-title">TND061 - Unreal Project</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/eried124/eried124.github.io" title="Git repository" aria-label="Git repository">
@@ -131,37 +130,49 @@
                 </script>
 
                 <div id="content" class="content">
+                    
                     <main>
+                        <div id=deadline-bg>
+                            <span id="deadline"></span> days left until the written report deadline
+                        </div>
+                        <script>
+                            var el = document.getElementById('deadline');
+                            var currDate = new Date();
+                            var endDate =  new Date("May, 19, 2023");
+                            var daysLeft = Math.max(0, Math.round((endDate - currDate)/(24*3600*1000)));
+                            el.innerHTML = daysLeft;
+                        </script>
+                        
                         <h1 id="texturing"><a class="header" href="#texturing">Texturing</a></h1>
 <ul>
 <li>As per Epic's recommendations, use .png, .tga, tif or .psd; <strong>Do not save uncompressed images as .jpg</strong></li>
 <li>Textures must have pixel dimensions that are powers of 2. 
 <ul>
-<li>A texture may be non-square/rectangles, but the width and height still have to be powers of 2</li>
+<li>A texture may be non-square/rectangles, but the width and height still have to be powers of 2 (such as <code>1024x512</code> or <code>64x128</code>)</li>
 </ul>
 </li>
-<li>Textures dimensions should be as small as possible and their dimensions should not exceed <code>8129x8292</code> pixels.</li>
+<li>Textures dimensions should be as small as possible and their dimensions should not exceed <code>8192x8192</code> pixels.</li>
 <li>As a rule of thumb, if you double the dimensions of a texture, it's file-size increases ~4x (exact size depends on image format, compression, etc)</li>
 <li>For the sake of simplicity we will avoid using channel packed textures since it is more error prone and also harder to author using conventional tools</li>
 <li>In the case where an alpha mask/channel is needed, it's fine to include it in the color map instead of authoring a dedicated alpha texture</li>
 </ul>
-<p>Valid texture sizes:</p>
-<div class="table-wrapper"><table><thead><tr><th>Dimension</th><th>Power of 2</th><th>DXT1 size</th></tr></thead><tbody>
-<tr><td>16</td><td>2^4</td><td>312 b</td></tr>
-<tr><td>32</td><td>2^5</td><td>824 b</td></tr>
-<tr><td>64</td><td>2^6</td><td>2.8 kb</td></tr>
-<tr><td>128</td><td>2^7</td><td>10.8 kb</td></tr>
-<tr><td>256</td><td>2^8</td><td>42.8 kb</td></tr>
-<tr><td>512</td><td>2^9</td><td>170 kb</td></tr>
-<tr><td>1024</td><td>2^10</td><td>682 kb</td></tr>
-<tr><td>2048</td><td>2^11</td><td>2.66 mb</td></tr>
-<tr><td>4096</td><td>2^12</td><td>10.6 mb</td></tr>
-<tr><td>8192</td><td>2^13</td><td>42.6 mb</td></tr>
+<h2 id="power-of-two-texture-dimensions"><a class="header" href="#power-of-two-texture-dimensions">Power of two texture dimensions</a></h2>
+<div class="table-wrapper"><table><thead><tr><th>Dimension</th><th>Power of 2</th><th>Approx. internal file size</th></tr></thead><tbody>
+<tr><td>16</td><td>2^4</td><td>312 B</td></tr>
+<tr><td>32</td><td>2^5</td><td>824 B</td></tr>
+<tr><td>64</td><td>2^6</td><td>2.8 KB</td></tr>
+<tr><td>128</td><td>2^7</td><td>10.8 KB</td></tr>
+<tr><td>256</td><td>2^8</td><td>42.8 KB</td></tr>
+<tr><td>512</td><td>2^9</td><td>170 KB</td></tr>
+<tr><td>1024</td><td>2^10</td><td>682 KB</td></tr>
+<tr><td>2048</td><td>2^11</td><td>2.66 MB</td></tr>
+<tr><td>4096</td><td>2^12</td><td>10.6 MB</td></tr>
+<tr><td>8192</td><td>2^13</td><td>42.6 MB</td></tr>
 </tbody></table>
 </div>
 <h2 id="color-spaces"><a class="header" href="#color-spaces">Color Spaces</a></h2>
 <p>Since certain textures contains colors and other contains vectors or scalar values, it's important to handle their color space properly. </p>
-<p><code>sRGB</code> images are <a href="http://en.wikipedia.org/wiki/Gamma_correction">gamma corrected</a> when viewed on a monitor. This transformation is undesired for scalar value which should instead be saved and treated as <code>linear</code> values.</p>
+<p><code>sRGB</code> images are <a href="http://en.wikipedia.org/wiki/Gamma_correction">gamma corrected</a> when viewed on a monitor. This transformation is undesired for non-color scalar/vector value which should instead be saved and treated as <code>linear</code> values.</p>
 <p>Texture maps such as metallic and roughness does not contain colors but 0-1 values that are used to control material properties and should therfore be treated as <code>linear</code>.</p>
 <p>Normal maps contains normal vectors and not actual colors. Gamma correcting normal maps changes the normal vectors and will result in incorrect results. Normal maps should thus also be <code>linear</code>.</p>
 <ul>
@@ -176,7 +187,7 @@
 </tbody></table>
 </div>
 <h2 id="texture-filtering"><a class="header" href="#texture-filtering">Texture Filtering</a></h2>
-<p><strong>Anisotropic filtering</strong> is very cheap on modern hardware and results in sharper texture filtering than plain <strong>Bilinear</strong>/<strong>Trilinear</strong> filtering. Prefer Anisotropic filtering <code>4x</code>/<code>8x</code> whenever possible. <code>2x</code> is usually a bit to low while there's diminishing returns at <code>16x</code>.</p>
+<p><strong>Anisotropic filtering</strong> is very cheap on modern hardware and results in sharper texture filtering than plain Bilinear**/**Trilinear filtering. If manually overriding filter, prefer Anisotropic filtering &gt;= 8x.</p>
 <p><img src="../../assets/texture_filtering.webp" alt="" /></p>
 
                     </main>
@@ -187,7 +198,7 @@
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../../book/03_assets/export.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../book/04_unreal/setup.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -201,29 +212,13 @@
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../../book/03_assets/export.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../book/04_unreal/setup.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

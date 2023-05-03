@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Performance tweaks - TND061</title>
+        <title>Performance tweaks - TND061 - Unreal Project</title>
 
 
         <!-- Custom HTML head -->
@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded "><a href="../../book/01_project/version_control.html">Version control</a></li><li class="chapter-item expanded "><a href="../../book/01_project/links.html">Links</a></li><li class="chapter-item expanded "><a href="../../book/01_project/final_build.html">Final build</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/export.html">Exporting from Maya/Blender</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/import.html">Importing in Unreal Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Working in Unreal</li><li class="chapter-item expanded "><a href="../../book/04_unreal/blockout.html">Blocking out environments</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Engine Configuration</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html" class="active">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Asset Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Editor</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Engine Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html" class="active">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +109,7 @@
                         </ul>
                     </div>
 
-                    <h1 class="menu-title">TND061</h1>
+                    <h1 class="menu-title">TND061 - Unreal Project</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/eried124/eried124.github.io" title="Git repository" aria-label="Git repository">
@@ -131,12 +130,55 @@
                 </script>
 
                 <div id="content" class="content">
+                    
                     <main>
+                        <div id=deadline-bg>
+                            <span id="deadline"></span> days left until the written report deadline
+                        </div>
+                        <script>
+                            var el = document.getElementById('deadline');
+                            var currDate = new Date();
+                            var endDate =  new Date("May, 19, 2023");
+                            var daysLeft = Math.max(0, Math.round((endDate - currDate)/(24*3600*1000)));
+                            el.innerHTML = daysLeft;
+                        </script>
+                        
                         <h1 id="performance-tweaks"><a class="header" href="#performance-tweaks">Performance tweaks</a></h1>
-<p>Work-in-progress</p>
-<h2 id="limit-framerate"><a class="header" href="#limit-framerate">Limit Framerate</a></h2>
 <h2 id="scalability"><a class="header" href="#scalability">Scalability</a></h2>
-<h2 id="lumen"><a class="header" href="#lumen">Lumen</a></h2>
+<p>You can tweak some of the generic quality settings under <strong>Settings &gt; Engine Scalability Settings</strong></p>
+<p>In the picture below are some reasonable suggestions for the settings
+<img src="../../assets/perf_scalability.webp" alt="" /></p>
+<p>Note that:</p>
+<ul>
+<li>Setting Textures too low will use low quality filtering/mip LODs which will cause blurry textures at higher distances and certain angles</li>
+<li>Setting Shadows too low will cause bleeding between walls/solid objects and shadow banding. However reducing shadows yield good performance gains</li>
+<li>Setting Reflections/Effects to Medium or below can disable Screen Space Reflections</li>
+</ul>
+<h2 id="viewport"><a class="header" href="#viewport">Viewport</a></h2>
+<p>Unchecking the <code>Viewport options -&gt; Realtime</code> checkbox will stop unreal from rendering certain effects (such as the temporal component in TAA/TSR and reflections). Saves some performance, but causes some visual inconsistency compared to having it off.</p>
+<p><img src="../../assets/perf_realtime.webp" alt="" /></p>
+<p>Reducing the <code>Screen Percentage</code> slider to below 100% lowers the internal rendering resolution which can yield a significant performance boost. The viewport will become blurrier as the percentage is reduced. <em>(If anti-aliasing is set to TSR, UE will reconstruct the lower resolution viewport to native resolution)</em></p>
+<p><img src="../../assets/perf_res.webp" alt="" /></p>
+<p>Switching <code>View mode</code> to Unlit/Wireframe will reduce the viewport rendering overhead. The <code>Visibility Collision</code> view mode is also more lightweight than Lit and in some cases provides better visuals than Unlit/Wireframe</p>
+<p><img src="../../assets/perf_light.webp" alt="" /></p>
+<h2 id="macros"><a class="header" href="#macros">Macros</a></h2>
+<p>There's a couple of macros for configuring console variables in <code>Content/Editor/ConsoleVars</code>.</p>
+<p><img src="../../assets/perf_macro_folder.webp" alt="" /></p>
+<ul>
+<li><strong>Framrate</strong> limits the amount of frames rendered each second. Unreal has no upper bound, which greatly impacts the GPU/CPU usage. Using a limit of 30/60 FPS is fine for working in the editor</li>
+<li><strong>AntiAliasing</strong> controls the smoothness of geometry edges and shader aliasing. 
+<ul>
+<li><code>FXAA</code> will use a simple post-processing edge detection algorithm. Works fine for static geometric edges, but will cause shimmering during movement and does not resolve shadow/ray-tracing noise.</li>
+<li><code>TAA</code> will use motion vectors and information across multiple frames which takes care of aliasing and shimmering, but causes ghosting during fast movements.</li>
+<li><code>TSR</code> is similar to TXAA, but higher quality and also upscales/reconstructs the image to a higher resolution (noticable if <code>Viewport options -&gt; Screen Percentage</code> is set to less than 100%)</li>
+</ul>
+</li>
+<li><strong>Reflections</strong> controls the Screen Space Reflections <em>(also requires effects set to High in the Scalability settings)</em>. They are enabled by default, but the &quot;High&quot; macro also enables variable roughness for the reflections, but also introduces some noise <em>(which anti-aliasing set to TAA/TSR should resolve)</em> <em>(without variable roughness, materials will have sharper reflections than their roughness value might suggest)</em></li>
+</ul>
+<p><em>(Comparison of reflections low (left) and high (right). Note the constant roughness vs varying roughness difference)</em></p>
+<p><img src="../../assets/perf_reflection.webp" alt="" /></p>
+<p>To run a macro, right click and select <strong>Execute Variable Collection</strong> <em>(double-clicking it will run it and then open the console variable editor)</em></p>
+<p><img src="../../assets/perf_macro.webp" alt="" /></p>
 
                     </main>
 
@@ -167,22 +209,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

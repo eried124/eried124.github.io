@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Naming conventions - TND061</title>
+        <title>Naming conventions - TND061 - Unreal Project</title>
 
 
         <!-- Custom HTML head -->
@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html" class="active">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded "><a href="../../book/01_project/version_control.html">Version control</a></li><li class="chapter-item expanded "><a href="../../book/01_project/links.html">Links</a></li><li class="chapter-item expanded "><a href="../../book/01_project/final_build.html">Final build</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/export.html">Exporting from Maya/Blender</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/import.html">Importing in Unreal Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Working in Unreal</li><li class="chapter-item expanded "><a href="../../book/04_unreal/blockout.html">Blocking out environments</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Engine Configuration</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html" class="active">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Asset Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Editor</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Engine Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +109,7 @@
                         </ul>
                     </div>
 
-                    <h1 class="menu-title">TND061</h1>
+                    <h1 class="menu-title">TND061 - Unreal Project</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/eried124/eried124.github.io" title="Git repository" aria-label="Git repository">
@@ -131,7 +130,19 @@
                 </script>
 
                 <div id="content" class="content">
+                    
                     <main>
+                        <div id=deadline-bg>
+                            <span id="deadline"></span> days left until the written report deadline
+                        </div>
+                        <script>
+                            var el = document.getElementById('deadline');
+                            var currDate = new Date();
+                            var endDate =  new Date("May, 19, 2023");
+                            var daysLeft = Math.max(0, Math.round((endDate - currDate)/(24*3600*1000)));
+                            el.innerHTML = daysLeft;
+                        </script>
+                        
                         <h1 id="conventions"><a class="header" href="#conventions">Conventions</a></h1>
 <p>Sensible and explicit names will help us finding things quickly. </p>
 <p>Although we will use fairly standardized conventions (based on Epic's recommendations), I have omitted certain parts and adapted it to our smaller scale project.</p>
@@ -166,18 +177,6 @@
 --><span style="color: #c2c77b;">[OptionalVariant]</span><!--
 -->_<!--
 --><span style="color: #92b2ca;">[OptionalNumber]</span>
-</span>
-<p>Wall and floor pieces may have their dimensions appended as part of their name.</p>
-<span class="convention">
-<span style="color: #d77c79;">[TypePrefix]</span><!--
--->_<!--
---><span style="color: #e6a472;">[AssetName]</span><!--
--->_<!--
---><span style="color: #c2c77b;">[OptionalVariant]</span><!--
--->_<!--
---><span style="color: #92b2ca;">[OptionalNumber]</span><!--
--->_<!--
---><span style="color: #6fb2ba;">[OptionalDimensions]</span>
 </span>
 <p><strong>Texture maps</strong> should also include a type suffix which describes what type of content the texture contains.</p>
 <span class="convention">
@@ -228,9 +227,9 @@
 <h3 id="asset-types"><a class="header" href="#asset-types">Asset Types</a></h3>
 <p>Valid asset type prefixes:</p>
 <div class="table-wrapper"><table><thead><tr><th>Prefix</th><th>Asset type</th></tr></thead><tbody>
-<tr><td><code>M</code></td><td>Material</td></tr>
+<tr><td><code>MT</code></td><td>Material Template</td></tr>
+<tr><td><code>M</code></td><td>Material Instance</td></tr>
 <tr><td><code>SM</code></td><td>Static mesh</td></tr>
-<tr><td><code>SK</code></td><td>Skeletal mesh</td></tr>
 <tr><td><code>T</code></td><td>Texture</td></tr>
 <tr><td><code>BP</code></td><td>Blueprint</td></tr>
 <tr><td><code>PS</code></td><td>Particle system</td></tr>
@@ -271,29 +270,25 @@ RockStack_Large                 (asset folder)
     T_SM_RockStack_Large_Rough  (roughness texture)
     T_SM_RockStack_Large_Metal  (metallic texture)
 </code></pre>
-<p>Wall/floor pieces:</p>
-<pre><code>SM_Wall_400x200
-SM_Wall_Corner_200x200
-SM_Floor_Tiles_100x100
-</code></pre>
 <p>Common shared assets:</p>
 <pre><code>M_RockSurface           (general purpose material)
 PP_BloomFilter          (post-processing material)
 BP_PlayerController     (blueprint)
 PS_DenseSmoke           (particle system)
 </code></pre>
-<h2 id="unreal-map-structure"><a class="header" href="#unreal-map-structure">Unreal Map Structure</a></h2>
-<pre><code>Debug               (debugging utilities)
+<!-- ## Unreal Map Structure
+
+```
+Debug               (debugging utilities)
 Player              (player start position, player controller)
 World               (global world settings and volumes)
-&lt;MapSection&gt;        (a section of the environment, e.g. basement)
+<MapSection>        (a section of the environment, e.g. basement)
   Structures        (basic structures: wall, floors, pillars, etc.)
   Props             (placeable props: furniture, foliage, etc.)
   Lights            (lightsources)
   Particles         (particle systems)
   Collisions        (structure collision volumes)
-</code></pre>
-
+``` -->
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -323,22 +318,6 @@ World               (global world settings and volumes)
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

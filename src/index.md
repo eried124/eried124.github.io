@@ -22,14 +22,24 @@
 
 ![](../../assets/header.webp)
 
+## Important Dates:
+
+- **May 19 (week 20)** - Written report
+- **May 22/23 (week 21)** - Presentations
+- **June 11 (week 23)** - Individual reflection
+
+## Links
+
+- [Google Drive](https://drive.google.com/drive/folders/188c6Irvl7q4CJ49kMP-Pu9KBb9B0lmnd?usp=share_link)
+    - [Props tracking sheet](https://docs.google.com/spreadsheets/d/1V1dCGaWn9CxUjdpfIqFMy-TahyrXctbeaeWrOrL8s1A/edit?usp=sharing)
+- [TNM061 Project Course Slides](https://liuonline.sharepoint.com/:b:/r/sites/Lisam_TNM061_2023VT_P8/CourseDocuments/lectures/12-information-group-projects.pdf?csf=1&web=1&e=qUmydX)
+
 ## Project
 
 - [Naming conventions](book/01_project/conventions.md)
 - [Folder structure](book/01_project/folders.md)
-- [Final build](book/01_project/final_build.md)
 - [Links](book/01_project/links.md)
-<!-- - [Scale and measurements](book/01_project/units.md) -->
-<!-- - [Cheatsheet](book/01_projects/cheatsheet.md) -->
+<!-- - [Final build](book/01_project/final_build.md) -->
 
  ## Concepts
 
@@ -40,12 +50,6 @@
 - [Workflow](book/03_assets/workflow.md)
 - [Models](book/03_assets/models.md)
 - [Textures](book/03_assets/textures.md)
-- [Exporting from Maya/Blender](book/03_assets/export.md)
-- [Importing in Unreal Engine](book/03_assets/import.md)
-
-## Working in Unreal 
-
-- [Blocking out environments](book/04_unreal/blockout.md)
 
 ## Unreal Engine Configuration
 

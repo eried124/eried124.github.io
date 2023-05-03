@@ -1,6 +1,6 @@
 # Physically Based Rendering
 
-"Physically based rendering (PBR) refers to the concept of using realistic shading/lighting models along with measured surface values to accurately represent real-world materials."
+> Physically based rendering (PBR) refers to the concept of using realistic shading/lighting models along with measured surface values to accurately represent real-world materials
 
 
 
@@ -57,9 +57,9 @@ Contains surface normal vectors which can be used to modulate the surface normal
 
 ![](../../assets/normal_map.webp)
 
-Normal maps have an iconic light-blue color (or brownish-yellow in certain engines that discard the z-channel).
+Normal maps have an iconic light-blue color _(or brownish-yellow in certain engines that discard the z-channel)_
 
-It might be worth noting that OpenGL uses Y+ and DirectX uses Y- and it is thus sometimes necessary to invert the Y/green channel depending of for which API the normal map was authored for.
+It might be worth noting that OpenGL uses Y+ and DirectX uses Y- and it is thus sometimes necessary to invert the Y/green channel depending of for which API the normal map was authored for _(UE uses DirectX)_
 
 ![](../../assets/normal_dx_ogl.webp)
 

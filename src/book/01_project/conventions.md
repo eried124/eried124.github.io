@@ -36,20 +36,6 @@ The format can be extended for **assets that have variations**:
 --><span style="color: #92b2ca;">[OptionalNumber]</span>
 </span>
 
-Wall and floor pieces may have their dimensions appended as part of their name.
-
-<span class="convention">
-<span style="color: #d77c79;">[TypePrefix]</span><!--
--->_<!--
---><span style="color: #e6a472;">[AssetName]</span><!--
--->_<!--
---><span style="color: #c2c77b;">[OptionalVariant]</span><!--
--->_<!--
---><span style="color: #92b2ca;">[OptionalNumber]</span><!--
--->_<!--
---><span style="color: #6fb2ba;">[OptionalDimensions]</span>
-</span>
-
 **Texture maps** should also include a type suffix which describes what type of content the texture contains.
 
 <span class="convention">
@@ -94,9 +80,9 @@ Valid asset type prefixes:
 
 | Prefix | Asset type               |
 |--------|--------------------------|
-| `M`    | Material                 |
+| `MT`   | Material Template        |
+| `M`    | Material Instance        |
 | `SM`   | Static mesh              |
-| `SK`   | Skeletal mesh            |
 | `T`    | Texture                  |
 | `BP`   | Blueprint                |
 | `PS`   | Particle system          |
@@ -106,8 +92,8 @@ Valid asset type prefixes:
 
 Valid texture type suffixes:
 
-| Suffix | Texture map type                        |
-|--------|-----------------------------------------|
+| Suffix   | Texture map type                        |
+|----------|-----------------------------------------|
 | `Color`  | Color (also known as albedo or diffuse) |
 | `Normal` | Normal map                              |
 | `Rough`  | Roughness                               |
@@ -142,13 +128,6 @@ RockStack_Large                 (asset folder)
     T_SM_RockStack_Large_Metal  (metallic texture)
 ```
 
-Wall/floor pieces:
-```
-SM_Wall_400x200
-SM_Wall_Corner_200x200
-SM_Floor_Tiles_100x100
-```
-
 Common shared assets:
 
 ```
@@ -158,7 +137,7 @@ BP_PlayerController     (blueprint)
 PS_DenseSmoke           (particle system)
 ```
 
-## Unreal Map Structure
+<!-- ## Unreal Map Structure
 
 ```
 Debug               (debugging utilities)
@@ -170,4 +149,4 @@ World               (global world settings and volumes)
   Lights            (lightsources)
   Particles         (particle systems)
   Collisions        (structure collision volumes)
-```
+``` -->

@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Physically Based Rendering - TND061</title>
+        <title>Physically Based Rendering - TND061 - Unreal Project</title>
 
 
         <!-- Custom HTML head -->
@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded "><a href="../../book/01_project/version_control.html">Version control</a></li><li class="chapter-item expanded "><a href="../../book/01_project/links.html">Links</a></li><li class="chapter-item expanded "><a href="../../book/01_project/final_build.html">Final build</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html" class="active">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/export.html">Exporting from Maya/Blender</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/import.html">Importing in Unreal Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Working in Unreal</li><li class="chapter-item expanded "><a href="../../book/04_unreal/blockout.html">Blocking out environments</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Engine Configuration</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html" class="active">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html">Asset Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Editor</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Engine Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +109,7 @@
                         </ul>
                     </div>
 
-                    <h1 class="menu-title">TND061</h1>
+                    <h1 class="menu-title">TND061 - Unreal Project</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/eried124/eried124.github.io" title="Git repository" aria-label="Git repository">
@@ -131,9 +130,23 @@
                 </script>
 
                 <div id="content" class="content">
+                    
                     <main>
+                        <div id=deadline-bg>
+                            <span id="deadline"></span> days left until the written report deadline
+                        </div>
+                        <script>
+                            var el = document.getElementById('deadline');
+                            var currDate = new Date();
+                            var endDate =  new Date("May, 19, 2023");
+                            var daysLeft = Math.max(0, Math.round((endDate - currDate)/(24*3600*1000)));
+                            el.innerHTML = daysLeft;
+                        </script>
+                        
                         <h1 id="physically-based-rendering"><a class="header" href="#physically-based-rendering">Physically Based Rendering</a></h1>
-<p>&quot;Physically based rendering (PBR) refers to the concept of using realistic shading/lighting models along with measured surface values to accurately represent real-world materials.&quot;</p>
+<blockquote>
+<p>Physically based rendering (PBR) refers to the concept of using realistic shading/lighting models along with measured surface values to accurately represent real-world materials</p>
+</blockquote>
 <p><img src="../../assets/pbr_material.webp" alt="" />
 <img src="../../assets/pbr.webp" alt="" /></p>
 <p>Useful resources:</p>
@@ -166,8 +179,8 @@
 <h2 id="normal-map"><a class="header" href="#normal-map">Normal Map</a></h2>
 <p>Contains surface normal vectors which can be used to modulate the surface normals of a model in order to fake shading of bumps and surface details.</p>
 <p><img src="../../assets/normal_map.webp" alt="" /></p>
-<p>Normal maps have an iconic light-blue color (or brownish-yellow in certain engines that discard the z-channel).</p>
-<p>It might be worth noting that OpenGL uses Y+ and DirectX uses Y- and it is thus sometimes necessary to invert the Y/green channel depending of for which API the normal map was authored for.</p>
+<p>Normal maps have an iconic light-blue color <em>(or brownish-yellow in certain engines that discard the z-channel)</em></p>
+<p>It might be worth noting that OpenGL uses Y+ and DirectX uses Y- and it is thus sometimes necessary to invert the Y/green channel depending of for which API the normal map was authored for <em>(UE uses DirectX)</em></p>
 <p><img src="../../assets/normal_dx_ogl.webp" alt="" /></p>
 <h2 id="height"><a class="header" href="#height">Height</a></h2>
 <p>Also known as displacement or bump maps.</p>
@@ -209,22 +222,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

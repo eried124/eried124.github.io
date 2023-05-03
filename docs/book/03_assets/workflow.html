@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Workflow - TND061</title>
+        <title>Asset Workflow - TND061 - Unreal Project</title>
 
 
         <!-- Custom HTML head -->
@@ -12,7 +12,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
         <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
@@ -84,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded "><a href="../../book/01_project/version_control.html">Version control</a></li><li class="chapter-item expanded "><a href="../../book/01_project/links.html">Links</a></li><li class="chapter-item expanded "><a href="../../book/01_project/final_build.html">Final build</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html" class="active">Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/export.html">Exporting from Maya/Blender</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/import.html">Importing in Unreal Engine</a></li><li class="chapter-item expanded affix "><li class="part-title">Working in Unreal</li><li class="chapter-item expanded "><a href="../../book/04_unreal/blockout.html">Blocking out environments</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Engine Configuration</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">Index</a></li><li class="chapter-item expanded affix "><li class="part-title">Project</li><li class="chapter-item expanded "><a href="../../book/01_project/conventions.html">Naming conventions</a></li><li class="chapter-item expanded "><a href="../../book/01_project/folders.html">Folder structure</a></li><li class="chapter-item expanded affix "><li class="part-title">Concepts</li><li class="chapter-item expanded "><a href="../../book/02_concepts/terminology.html">Terminology</a></li><li class="chapter-item expanded "><a href="../../book/02_concepts/pbr.html">Physically Based Rendering</a></li><li class="chapter-item expanded affix "><li class="part-title">Asset guidelines</li><li class="chapter-item expanded "><a href="../../book/03_assets/workflow.html" class="active">Asset Workflow</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/models.html">Models</a></li><li class="chapter-item expanded "><a href="../../book/03_assets/textures.html">Textures</a></li><li class="chapter-item expanded affix "><li class="part-title">Unreal Editor</li><li class="chapter-item expanded "><a href="../../book/04_unreal/setup.html">Engine Setup</a></li><li class="chapter-item expanded "><a href="../../book/04_unreal/performance.html">Performance tweaks</a></li><li class="chapter-item expanded affix "><li class="part-title">Links</li><li class="chapter-item expanded "><a href="../../book/05_links/resources.html">Resources</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -110,7 +109,7 @@
                         </ul>
                     </div>
 
-                    <h1 class="menu-title">TND061</h1>
+                    <h1 class="menu-title">TND061 - Unreal Project</h1>
 
                     <div class="right-buttons">
                         <a href="https://github.com/eried124/eried124.github.io" title="Git repository" aria-label="Git repository">
@@ -131,14 +130,28 @@
                 </script>
 
                 <div id="content" class="content">
+                    
                     <main>
+                        <div id=deadline-bg>
+                            <span id="deadline"></span> days left until the written report deadline
+                        </div>
+                        <script>
+                            var el = document.getElementById('deadline');
+                            var currDate = new Date();
+                            var endDate =  new Date("May, 19, 2023");
+                            var daysLeft = Math.max(0, Math.round((endDate - currDate)/(24*3600*1000)));
+                            el.innerHTML = daysLeft;
+                        </script>
+                        
                         <h1 id="workflow"><a class="header" href="#workflow">Workflow</a></h1>
-<h2 id="asset-creation-workflow"><a class="header" href="#asset-creation-workflow">Asset Creation Workflow</a></h2>
+<h2 id="11-asset-creation-workflow"><a class="header" href="#11-asset-creation-workflow">1.1. Asset Creation Workflow</a></h2>
 <ol>
-<li><strong>Create a new folder for the asset in the <code>ContentSource</code> folder</strong></li>
-<li><strong>Gather reference</strong>
+<li><strong>Create a new folder for the asset working files in the <code>TNM061 Projekt\Production\ContentSource\&lt;yourname&gt;</code> folder</strong></li>
+<li><strong>Gather references</strong>
 <ul>
-<li>Search for and find images of the object you are going to model that showcase it from multiple angles. <a href="https://www.pureref.com/">PureRef</a> is a very handy tool for collecting references</li>
+<li>Look up the dimensions of the object. For furniture and similar objects, IKEA is a good source of reference for dimensions. </li>
+<li>Search for and find images of the object you are going to model that shows it from multiple angles. </li>
+<li><a href="https://www.pureref.com/">PureRef</a> is a very handy tool for collecting references</li>
 </ul>
 </li>
 <li><strong>Create a base mesh/model</strong>
@@ -148,13 +161,17 @@
 </li>
 <li><strong>Export the base mesh and import it in Unreal Engine</strong>
 <ul>
-<li>It's important to check that the model have realistic dimensions compared to the other objects within the engine</li>
+<li>See &quot;<strong>Export the mesh and import it in Unreal Engine</strong>&quot; point below for importing details</li>
+<li>It's important to check that the model have proper proportions and dimensions compared to the other objects within the engine</li>
+<li>Make any required scale corrections outside of Unreal Engine (in Maya/3DS Max/Blender)</li>
 </ul>
 </li>
-<li><strong>Make any scale/proportion corrections</strong></li>
-<li><strong>Finialize the model</strong>
+<li><strong>Finalize the model</strong>
 <ul>
-<li>Add in any remaining details and start optimizing the model by reducing unecessary geometry</li>
+<li>Add in any remaining details and start optimizing the model by reducing unecessary geometry that does not contribute to it's silhouette or shape (such as redundant edge loops)</li>
+<li>Make sure to <strong>ajust the origin of the mesh</strong>. Either place it at the center of the mesh, the center of the bottom section of the mesh or at a corner of the mesh bounding box. Otherwise snapping, rotation and translation becomes a hassle.</li>
+<li>Apply any scale and/or rotation transformations if applicable</li>
+<li>Join any non-moving mesh parts into a single mesh (or )</li>
 </ul>
 </li>
 <li><strong>UV-unwrapping</strong>
@@ -162,28 +179,64 @@
 <li>Every model requires UV-maps to work properly with materials</li>
 </ul>
 </li>
-<li>(Optional) <strong>Triangulate the mesh</strong></li>
-<li><strong>Export the mesh and import it in Unreal Engine</strong></li>
-<li><strong>Assign materials</strong></li>
-<li><strong>Test it in your test map</strong>
+<li><strong>Triangulate the mesh</strong> (Optional as Unreal does it for you, though it can sometimes result in shading artifacts)</li>
+<li><strong>Export the mesh and import it in Unreal Engine</strong>
 <ul>
-<li>Each team member should have their own test map where they can test assets without breaking the main map</li>
+<li>Export the model as an <code>.fbx</code> file</li>
+<li>Import the model by dragging the file into into the <code>Content\Import</code> folder
+<img src="../../assets/import_folder.webp" alt="" /></li>
+<li>In the FBX importer, make sure to set <strong>Material Import Method</strong> as <strong>Do Not Create Material</strong>
+<ul>
+<li>If you have not merged all the parts of your model into a single mesh, make sure to select <strong>Combine Meshes</strong> to have Unreal do it during the import
+<img src="../../assets/import_fbx.webp" alt="" /></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Assign material(s)</strong>
+<ul>
+<li>Create a material instance from the <code>Content\Materials\Templates\MT_PBR_Standard</code> for materials with textures. Use the <code>Content\Materials\Templates\MT_PBR_Untextured</code> for plain, untextured, materials.</li>
+<li>Override the corresponding texture channels in the material instance with the assets texture maps</li>
+<li>Click on the imported mesh/model to open up the <strong>Static Mesh editor</strong>. In the <strong>Details -&gt; Material Slots</strong> panel, materials can be assigned to the mesh</li>
+</ul>
+</li>
+<li><strong>Test placing the asset in a map</strong>
+<ul>
+<li>There's a test level for testing assets in <code>Content\Levels\TestLevels\AssetLevel</code></li>
 </ul>
 </li>
 <li><strong>Add the asset the <code>Placeable</code> folder</strong>
 <ul>
-<li>Find and put it a suitable subfolder in <code>Placeables</code> (or create one if no suitable subfolder exists) </li>
+<li>Put the static mesh/model with the assigned material in the <code>Content\Placeables</code>
+<ul>
+<li>Rename the static mesh to
+<span class="convention"><span style="color: #d77c79;">[SM]</span>_<span style="color: #e6a472;">[AssetName]</span></span></li>
+</ul>
+</li>
+<li>Put the material instance in <code>Content\Materials</code>
+<ul>
+<li>Rename the material instance to
+<span class="convention"><span style="color: #d77c79;">[M]</span>_<span style="color: #e6a472;">[AssetName]</span></span></li>
+</ul>
+</li>
+<li>Put any textures in <code>Content\Textures</code>
+<ul>
+<li>Rename the material instance to
+<span class="convention"><span style="color: #d77c79;">[T]</span>_<span style="color: #e6a472;">[AssetName]</span>_<span style="color: #c0a7c7;">[TextureTypeSuffix]</span></span></li>
+</ul>
+</li>
+<li>See <a href="../01_project/conventions.html">Naming conventions</a> for full asset naming conventions</li>
 </ul>
 </li>
 </ol>
 <p>Suggested folder structure for working on an asset:</p>
-<pre><code>AssetName
-    Export          (exported files for Unreal Engine)
-    Reference       (reference images)
-    Models          (model files)
-    Textures        (texture files if applicable)
+<pre><code>* ContentSource\&lt;yourname&gt;\AssetName:
+|- Export          (exported model for Unreal Engine)
+|- References      (reference images)
+|- Models          (Maya/3DS Max/Blender project files)
+|- Textures        (texture files if applicable)
 </code></pre>
-<h2 id="project-workflow"><a class="header" href="#project-workflow">Project Workflow</a></h2>
+<h2 id="12-rough-project-outline"><a class="header" href="#12-rough-project-outline">1.2. Rough Project Outline</a></h2>
 <ol>
 <li><strong>Prototyping</strong>
 <ul>
@@ -279,22 +332,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
