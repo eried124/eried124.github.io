@@ -1,8 +1,0 @@
-{
-    "markdown.styles": [
-        "./.vscode/style.css"
-    ],
-    "pasteImage.basePath": "${currentFileDir}",
-    "pasteImage.path": "${projectRoot}/src/assets",
-    "pasteImage.showFilePathConfirmInputBox": true
-}
